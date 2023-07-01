@@ -4,11 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-    --header-height: 64px;
-    --footer-height: 32px;
+    --app-width: 95%;
+    --app-max-width: 1400px;
 }
+
 
 html, body, .layout-wrapper, .layout {
     height: 100%;
@@ -17,14 +17,25 @@ html, body, .layout-wrapper, .layout {
 .layout {
     display: flex;
     flex-direction: column;
+    flex-flow: column;
+
+    .header-wrapper {
+        flex: 0 1 auto;
+    }
 
     .main-wrapper {
-        flex: 1;
+        flex: 1 1 auto;
     }
 
     .footer-wrapper {
-        flex-shrink: 0;
+        flex: 0 1 auto;
     }
+}
+
+#app {
+    width: var(--app-width);
+    max-width: var(--app-max-width);
+    margin: 0 auto;
 }
 
 header {
@@ -32,7 +43,6 @@ header {
     color: white;
 
     .header {
-        height: var(--header-height);
         display: flex;
         align-items: center;
     }
@@ -42,7 +52,6 @@ footer {
     background-color: var(--color-secondary);
 
     .footer {
-        height: var(--footer-height);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -60,4 +69,6 @@ footer {
     p { @apply text-md; }
     span { @apply text-md; }
     small { @apply text-sm; }
+    header { @apply py-2; }
+    footer { @apply py-1; }
 }

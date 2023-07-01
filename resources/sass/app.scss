@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --header-height: 64px;
+    --footer-height: 32px;
+}
+
+#layout {
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--color-primary);
+    color: white;
+
+    .header {
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-secondary);
+
+    .footer {
+        height: var(--footer-height);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@layer components {
+    h1 { @apply text-4xl font-bold; }
+    h2 { @apply text-3xl font-bold; }
+    h3 { @apply text-2xl font-bold; }
+    h4 { @apply text-xl font-bold; }
+    h5 { @apply text-lg font-semibold; }
+    h6 { @apply text-md font-semibold; }
+    p { @apply text-md; }
+    span { @apply text-md; }
+    small { @apply text-sm; }
+}

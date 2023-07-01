@@ -10,9 +10,21 @@
     --footer-height: 32px;
 }
 
-#layout {
-    position: relative;
-    min-height: 100vh;
+html, body, .layout-wrapper, .layout {
+    height: 100%;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+
+    .main-wrapper {
+        flex: 1;
+    }
+
+    .footer-wrapper {
+        flex-shrink: 0;
+    }
 }
 
 header {
@@ -27,9 +39,6 @@ header {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background-color: var(--color-secondary);
 
     .footer {

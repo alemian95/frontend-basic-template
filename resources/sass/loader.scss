@@ -1,0 +1,28 @@
+.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: transparentize($color: black, $amount: 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+}
+
+.spinner {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	border: 9px solid;
+	border-color: var(--color-secondary);
+	border-right-color: var(--color-primary);
+	animation: spinner-d3wgkg 1s infinite linear;
+}
+
+@keyframes spinner-d3wgkg {
+	to {
+		transform: rotate(1turn);
+	}
+}

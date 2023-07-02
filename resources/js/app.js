@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         })
         .finally(() => {
             console.log("Settings ready!");
+            document.getElementById('loading').style.display = 'none';
             app();
         });
 });

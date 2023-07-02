@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'loader';
+
 :root {
     --app-width: 95%;
     --app-max-width: 1400px;

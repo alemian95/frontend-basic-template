@@ -3,29 +3,32 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 Alpine.start();
 
-window.settings = {};
+window.data = {};
+window.loader = null;
 
-let loadingSettings = fetch('./assets/settings.json')
+let loadingData = fetch('./assets/settings.json')
     .then((response) => response.json())
-    .then((json) => window.settings = json);
+    .then((json) => window.data = json);
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("Document ready!");
 
-    loadingSettings
+    window.loader = document.getElementById('loading');
+
+    loadingData
         .then(() => {
-            console.log("Loading settings...");
+            console.log("Loading data...");
         })
         .catch((error) => {
             console.error(error);
         })
         .finally(() => {
-            console.log("Settings ready!");
-            document.getElementById('loading').style.display = 'none';
+            console.log("Data ready!");
+            window.loader.style.display = 'none';
             app();
         });
 });
 
 function app() {
-    console.log(window.settings);
+    console.log(window.data);
 }

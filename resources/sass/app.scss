@@ -73,4 +73,9 @@ footer {
     small { @apply text-sm; }
     header { @apply py-2; }
     footer { @apply py-1; }
+
+    .banner { @apply p-4 m-4 border-8; }
+    .banner-success { @apply border-success bg-success-background text-success-text; }
+    .banner-danger { @apply border-danger bg-danger-background text-danger-text; }
+    .banner-warning { @apply border-warning bg-warning-background text-warning-text; }
 }

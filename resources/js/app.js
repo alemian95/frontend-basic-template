@@ -1,4 +1,5 @@
 import Alpine from 'alpinejs';
+import { DOMElement } from './lib';
 
 window.Alpine = Alpine;
 Alpine.start();
@@ -13,7 +14,7 @@ let loadingData = fetch('./assets/settings.json')
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("Document ready!");
 
-    window.loader = document.getElementById('loading');
+    window.loader = new DOMElement('#loader');
 
     loadingData
         .then(() => {
@@ -24,7 +25,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         })
         .finally(() => {
             console.log("Data ready!");
-            window.loader.style.display = 'none';
+            window.loader.hide();
             app();
         });
 });

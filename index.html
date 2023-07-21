@@ -12,25 +12,27 @@
 
     <div class="layout-wrapper">
         <div class="layout">
-            <div class="header-wrapper">
-                <header>
-                    <div class="header">
+            <header>
+                <div class="header">
+                    <div class="container">
                         <h1>HEADER</h1>
                     </div>
-                </header>
-            </div>
-            <div class="main-wrapper">
-                <main id="app" class="h-full">
-                    <h1>Package template</h1>
-                </main>
-            </div>
-            <div class="footer-wrapper">
-                <footer x-data="{ year: (new Date()).getFullYear() }">
-                    <div class="footer">
-                        <p>&copy;<span x-text="year"></span> - Package Template</p>
+                </div>
+            </header>
+            <main class="h-full">
+                <div class="main h-full" id="app">
+                    <div class="container">
+                        <h2>Package template</h2>
                     </div>
-                </footer>
-            </div>
+                </div>
+            </main>
+            <footer x-data="{ year: (new Date()).getFullYear() }">
+                <div class="footer">
+                    <div class="container">
+                        <p class="text-center">&copy;<span x-text="year"></span> - Package Template</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
 

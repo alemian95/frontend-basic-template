@@ -12,62 +12,44 @@
 }
 
 
-html, body, .layout-wrapper, .layout {
-    height: 100%;
+html, body, .layout {
+    min-height: 100vh;
 }
 
 .layout {
-    display: flex;
-    flex-direction: column;
-    flex-flow: column;
-
-    .header-wrapper {
-        flex: 0 1 auto;
-    }
-
-    .main-wrapper {
-        flex: 1 1 auto;
-    }
-
-    .footer-wrapper {
-        flex: 0 1 auto;
-    }
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
-#app {
+.container {
     width: var(--app-width);
     max-width: var(--app-max-width);
     margin: 0 auto;
 }
 
+header, main, footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
     background: var(--color-primary);
     color: white;
-
-    .header {
-        display: flex;
-        align-items: center;
-    }
 }
 
 footer {
     background-color: var(--color-secondary);
-
-    .footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 
 @layer components {
-    h1 { @apply text-4xl font-bold; }
-    h2 { @apply text-3xl font-bold; }
-    h3 { @apply text-2xl font-bold; }
-    h4 { @apply text-xl font-bold; }
-    h5 { @apply text-lg font-semibold; }
-    h6 { @apply text-md font-semibold; }
+    h1 { @apply text-5xl font-bold; }
+    h2 { @apply text-4xl font-bold; }
+    h3 { @apply text-3xl font-bold; }
+    h4 { @apply text-2xl font-bold; }
+    h5 { @apply text-xl font-semibold; }
+    h6 { @apply text-lg font-semibold; }
     p { @apply text-md; }
     span { @apply text-md; }
     small { @apply text-sm; }

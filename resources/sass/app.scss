@@ -6,11 +6,6 @@
 
 @import 'loader';
 
-:root {
-    --app-width: 95%;
-    --app-max-width: 1400px;
-}
-
 
 html, body, .layout {
     min-height: 100vh;
@@ -19,27 +14,6 @@ html, body, .layout {
 .layout {
     display: grid;
     grid-template-rows: auto 1fr auto;
-}
-
-.container {
-    width: var(--app-width);
-    max-width: var(--app-max-width);
-    margin: 0 auto;
-}
-
-header, main, footer {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background: var(--color-primary);
-    color: white;
-}
-
-footer {
-    background-color: var(--color-secondary);
 }
 
 
@@ -53,8 +27,19 @@ footer {
     p { @apply text-md; }
     span { @apply text-md; }
     small { @apply text-sm; }
-    header { @apply py-2 px-2; }
-    footer { @apply py-1 px-2; }
+
+    header {
+        @apply py-2 bg-primary text-white;
+    }
+    main {
+        @apply py-2;
+    }
+    footer {
+        @apply py-2 bg-secondary;
+    }
+    .container {
+        @apply mx-auto my-0 px-4 w-full max-w-7xl;
+    }
 
     .button { @apply py-1 px-4 border-2 text-lg; }
     .button-success { @apply border-success bg-success-background text-success-text hover:bg-success hover:text-white; }
